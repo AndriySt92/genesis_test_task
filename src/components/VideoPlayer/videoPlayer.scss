@@ -1,0 +1,105 @@
+.video__player{
+    position: relative;
+    animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    &-instruction {
+        text-align: center;
+        font-size: 20px;
+        position: absolute;
+        top: -5%;
+        left: 0px;
+        right: 0px;
+        @media screen and (max-width: 900px) {
+            font-size: 16px;
+            top: -5%;
+        }
+        @media screen and (max-width: 700px) {
+            font-size: 14px;
+            top: -6%;
+        }
+        @media screen and (max-width: 500px) {
+            font-size: 9px;
+            top: -5%;
+            left: 0px;
+        }
+    }
+    &-info{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color:rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(9.3px);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        h5{
+        color: #fff;
+        padding-left: 20px;
+        line-height: 40px; 
+            @media screen and (max-width: 900px) {
+                font-size: 18px;
+                line-height: 30px;
+            }
+            @media screen and (max-width: 600px) {
+                font-size: 12px;
+                padding-left: 3px;
+                line-height: 22px;
+            }
+        }
+    }
+    &-controls{
+        display: flex;
+        justify-content: center;
+        div{
+            margin: 15px 10px;
+            border: 1px solid #c90202;
+            border-radius: 6px;
+            box-shadow: 0px 3px 8px -2px rgba(102,97,97,1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 200ms ease;
+            span {
+                display: inline-block;
+                font-size: 25px;
+                padding: 3px 22px;
+            }
+            &:hover {
+                background: #c90202;
+                color: #fff;
+            }
+            @media screen and (max-width: 900px) {
+                span{
+                    font-size: 22px;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                margin: 5px 10px;
+                span{
+                    font-size: 13px;
+                    padding: 2px 10px;
+                }
+            }
+        }
+    }
+}
+
+.locked{
+    font-size: 40px;
+    text-align: center;
+}
+
+  @keyframes fade-in-top {
+    0% {
+      -webkit-transform: translateY(-50px);
+              transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,177 @@
+.course__item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 48%;
+    border-radius: 16px;
+    box-shadow:rgba(24, 39, 75, 0.12) 0px 8px 18px -6px, rgba(24, 39, 75, 0.12) 0px 12px 42px -4px;
+    overflow: hidden;
+    margin: 20px 0px;
+    overflow: hidden;
+    animation: slide-in-blurred-left 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    a {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto; 
+        text-decoration: none;
+        color: #000;
+    }
+    &-media {
+        width: 100%;
+        max-height: 254px;
+        height: 100%;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+            width: 100%;
+            min-height: 100%;
+        }
+        video{
+            max-height: 254px;
+            object-fit: cover
+        }
+        &.active{
+            animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+   
+        @media screen and (max-width: 990px) {
+            max-height: 160px;
+        }
+        @media screen and (max-width: 900px) {
+            max-height: 340px;
+        }
+    }
+    &-content{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        padding: 10px 40px;
+        .item-content__title{
+            text-align: center;
+            h5 {
+                margin: 15px 0px 20px 0px;
+                font-size: 22px;
+                font-weight: 600;
+            }
+        }
+        .item-content__subtitle{
+            p {
+                word-break: break-all;
+                margin-bottom: 20px;
+            }
+        }
+        .item-content__skills{
+            flex: 1;
+            text-align: center;
+            h5{
+                font-size: 20px;
+                padding-bottom: 20px;
+                margin: 0px;
+                font-weight: 600;
+                border-bottom:1px solid rgba(69, 71, 77, 0.5);
+            }
+            ul {
+                list-style: none;
+                text-align: center;
+                padding: 0px;
+                margin: 0px;
+                li {
+                    flex: 0 1 50% ;
+                    padding: 13px;
+                    font-size: 18px;
+                    border-bottom:1px solid rgba(69, 71, 77, 0.5);
+                    @media screen and (max-width: 900px) {
+                        font-size: 16px;
+                    } 
+                }
+            }
+        }   
+        .item-content__rating {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            span{
+                font-weight: 600;
+            }
+            &-star{
+                display: flex;
+                align-items: baseline;
+                .number-rating{
+                    color: #ccc;
+                    margin-left: 10px;
+                }
+                .star-ratings {
+                    unicode-bidi: bidi-override;
+                    color: #ccc;
+                    position: relative;
+                    margin: 0;
+                    padding: 0;
+                    .fill-ratings {
+                      color: #e7711b;
+                      padding: 0;
+                      position: absolute;
+                      z-index: 1;
+                      display: block;
+                      top: 0;
+                      left: 0;
+                      overflow: hidden;
+                    
+                      span {
+                        display: inline-block;
+                      }
+                    }
+                    .empty-ratings {
+                      padding: 0;
+                      display: block;
+                      z-index: 0;
+                    }
+               
+                }
+            }
+        }   
+        .item-content__lessons{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom:1px solid rgba(69, 71, 77, 0.5); 
+            span{
+                font-weight: 600;
+            }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        flex: 0 1 100%;
+    }
+}
+
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+@keyframes slide-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
