@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/genesis_test_task/static/css/main.248fdc3c.css",
+    "main.js": "/genesis_test_task/static/js/main.cde80130.js",
+    "index.html": "/genesis_test_task/index.html",
+    "main.248fdc3c.css.map": "/genesis_test_task/static/css/main.248fdc3c.css.map",
+    "main.cde80130.js.map": "/genesis_test_task/static/js/main.cde80130.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.248fdc3c.css",
+    "static/js/main.cde80130.js"
+  ]
+}
